@@ -6,11 +6,18 @@ import {PagedContentMemory} from "resources/templates/paged-content/paged-conten
 import {ConfigurationHolder} from "../../resources/configuration-holder"
 
 @inject(PrayerRequestService, NavigationService, Router, MessageService, PagedContentResolver.of(PagedContentMemory), ConfigurationHolder)
+import {PrayerRequestService, NavigationService, MessageService} from '../../services/index'
+import {Router} from "aurelia-router";
+import {PagedContentResolver} from "../../resources/templates/paged-content-resolver"
+import {PagedContentMemory} from "../../resources/templates/paged-content-memory"
+
+@inject(PrayerRequestService, NavigationService, Router, MessageService, PagedContentResolver.of(PagedContentMemory))
 export class PrayerRequestsList {
 
     pagedContentMemory
 
     constructor(prayerRequestService, navigationService, router, messageService, pagedContentResolver, configurationHolder) {
+    constructor(prayerRequestService, navigationService, router, messageService, pagedContentResolver) {
         this.prayerRequestService = prayerRequestService
         this.navigationService = navigationService
         this.router = router
