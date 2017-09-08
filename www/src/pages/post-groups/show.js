@@ -62,6 +62,8 @@ export class PostGroupsShow {
             this.filteredPosts = this.postGroup.publishedPosts
             this.pagedContentMemory = this.pagedContentResolver({ 'id': params.id })
             this.pagedContentMemory.setPage((params.page) ? parseInt(params.page) - 1 : 0)
+                this.pagedContentMemory.setPage((params.page) ? parseInt(params.page) - 1 : 0)
+            }
         }, (err) => {
             this.messageService.error("Post Group not found", true)
             this.router.navigateBack()
