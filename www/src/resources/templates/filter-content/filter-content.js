@@ -25,6 +25,7 @@ export class FilterContent {
         let out = []
 
         if(this.extraFields.length > 0) {
+        if(this.extraFields) {
             let extraFields = JSON.parse(this.extraFields).extraFields
 
             if(extraFields) {
@@ -43,6 +44,11 @@ export class FilterContent {
         })
 
         if(this.parsedExtraFields.length > 0) {
+        if(this.parsedExtraFields) {
+            this.defaults.forEach(defaultItem => {
+                fields.set(defaultItem, defaultItem.charAt(0).toUpperCase() + defaultItem.slice(1))
+            })
+
             this.parsedExtraFields.forEach((parsedExtraField) => {
                 if(parsedExtraField.showInFilter) {
                    fields.set(parsedExtraField.name, parsedExtraField.displayName)
@@ -51,6 +57,9 @@ export class FilterContent {
         }
 
         this.fields = fields
+
+            this.fields = fields
+        }
     }
 
     fieldsBound() {
@@ -103,6 +112,11 @@ export class FilterContent {
         }
 
         return filteredEvents
+        let searchValue = this.element.querySelector("#filter-box").value
+        let context = target.options[target.selectedIndex].value
+        let posts = this.data.publishedPosts
+
+        this.filteredPosts = this.filterPosts(searchValue, posts, context)
     }
 
     filterPosts(searchValue, posts, context) {
