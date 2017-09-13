@@ -20,7 +20,6 @@
     <plugin name="nl.x-services.plugins.backgroundaudio" spec="~1.0.1" />
     <plugin name="phonegap-plugin-mobile-accessibility" spec="https://github.com/phonegap/phonegap-mobile-accessibility.git" />
 
->>>>>>> Add plugin to fix audio playback on iphone.
     <access origin="*" />
 
     <allow-intent href="http://*/*" />
