@@ -23,6 +23,11 @@ export class EventsList {
 
     loadEvents() {
         this.events = this.eventService.list()
+    constructor(eventService, router, navigationService) {
+        this.eventService = eventService
+        this.router = router
+        this.navigationService = navigationService
+        this.events = eventService.list()
         this.events.promise.then((events) => this.filteredEvents = events)
     }
 }
