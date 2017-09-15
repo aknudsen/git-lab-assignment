@@ -8,6 +8,10 @@ import {ConfigurationHolder} from "../resources/configuration-holder"
 export class Home {
 
     constructor(feedService, router, rssPostService, postGroupService, postService, navigationService, ConfigurationHolder, EventAggregator) {
+@inject(FeedService, Router, RssPostService, PostGroupService, PostService, NavigationService, ConfigurationHolder)
+export class Home {
+
+    constructor(feedService, router, rssPostService, postGroupService, postService, navigationService, ConfigurationHolder) {
         this.router = router
         this.feedService = feedService
         this.rssPostService = rssPostService
@@ -39,7 +43,6 @@ export class Home {
                 this.configurationHolder.set('prayerTimeImageURL', res.prayerTimeImageURL)
                 this.configurationHolder.set('eventsImageURL', res.eventsImageURL)
 
-                this.eventAggregator.subscribe('feed.cache.updated',() => this.feed = this.feedService.findOne())
             }
         )
     }
