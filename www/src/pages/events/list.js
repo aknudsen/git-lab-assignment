@@ -5,6 +5,7 @@ import {Router} from "aurelia-router";
 import {ConfigurationHolder} from "../../resources/configuration-holder";
 
 @inject(EventService, Router, NavigationService, ConfigurationHolder, EventAggregator)
+@inject(EventService, Router, NavigationService, ConfigurationHolder)
 export class EventsList {
 
     @bindable ({defaultBindingMode: bindingMode.twoWay}) filteredEvents = []
@@ -24,10 +25,13 @@ export class EventsList {
     loadEvents() {
         this.events = this.eventService.list()
     constructor(eventService, router, navigationService) {
+    constructor(eventService, router, navigationService, configurationHolder) {
         this.eventService = eventService
         this.router = router
         this.navigationService = navigationService
         this.events = eventService.list()
         this.events.promise.then((events) => this.filteredEvents = events)
+
+        this.eventsImageURL = configurationHolder.get('eventsImageURL')
     }
 }
