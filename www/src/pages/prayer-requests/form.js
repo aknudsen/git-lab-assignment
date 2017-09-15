@@ -5,6 +5,7 @@ import {Router} from 'aurelia-router'
 import {PrayerRequest} from "../../models/prayer-request";
 import {ConfigurationHolder} from "../../resources/configuration-holder";
 
+
 ValidationRules
     .ensure('title').required().withMessage("Summary is required")
     .ensure('author').required().withMessage("Name is required")
