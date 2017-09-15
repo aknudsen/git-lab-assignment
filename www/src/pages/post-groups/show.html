@@ -63,6 +63,7 @@
         </paged-content>
 
         <div if.bind="postGroup.postGroups.length > 0">
+            <div innerHTML.bind="postGroup.postGroupsContent | markdown"></div>
             <div class="associated-postGroups-container">
                 <div class="associated-postGroups-list">
                     <a click.delegate="navigationService.getPostGroupDestination(pg)" repeat.for="pg of postGroup.postGroups" class="card-wrap">
@@ -85,8 +86,6 @@
                     </a>
                 </div>
             </div>
-
-            <div innerHTML.bind="postGroup.postGroupsContent | markdown"></div>
         </div>
     </page-body>
 </template>
