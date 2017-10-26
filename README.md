@@ -47,7 +47,10 @@ To set up Travis CI for your repository:
 
 
 # Task 2:
-* Simple rebase...
+
+* the last two commits on the `task-2` branch need to be removed.
+* use the `git reset` command to remove the two commits (google should help you figure out the precise options to use to remove the two commits).
+* Once you are done, use the force to push your changes.
 
 # Git Resources:
 
