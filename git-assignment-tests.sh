@@ -41,6 +41,9 @@ git checkout master
 test="Task 2: the bad commits have been removed from the repository"
 if git log --oneline --all | grep 'two commits that should not be on task-2'; then fail "$test"; else pass "$test"; fi
 
+# Test Task 3:
+test="Task 3: the branch has been created from the commit with the message 'object caching on the client side!'"
+if git branch -av | grep 'task-3' | grep 'object caching on the client side!'; then pass "$test"; else fail "$test"; fi
 
 
 

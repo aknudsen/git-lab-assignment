@@ -55,6 +55,12 @@ To set up Travis CI for your repository:
 * use the `git reset` command to remove the two commits (google should help you figure out the precise options to use to remove the two commits).
 * Once you are done, use the force to push your changes.
 
+# Task 3:
+
+* checkout the commit with this message: "object caching on the client side!" and create the branch `task-3` from that commit.
+* push up the new `task-3` branch. This will require setting the upstream branch, but git will help you with the command to do that.
+
+
 # Git Resources:
 
 * How to remove a commit: https://www.clock.co.uk/insight/deleting-a-git-commit
