@@ -29,6 +29,9 @@ To set up Travis CI for your repository:
     * The `.travis.yml` file
     * The `git-assignment-tests.sh` file
     * Also note that you hopefully won't clobber these files as each task is given its own branch.
+* The following git alias will make inspecting the logs much easier:
+    * Configure the alias with the following command: `git config --global alias.lp 'log --oneline --graph --all'`
+    * Use `git lp` to get a more useful and powerful log output. :)
 
 # Tasks
 
