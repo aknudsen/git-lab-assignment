@@ -45,7 +45,14 @@ if git log --oneline --all | grep 'two commits that should not be on task-2'; th
 test="Task 3: the branch has been created from the commit with the message 'object caching on the client side!'"
 if git branch -av | grep 'task-3' | grep 'object caching on the client side!'; then pass "$test"; else fail "$test"; fi
 
+# Test Task 4:
+test="Task 4: the bug has been reverted"
+if git branch -av | grep 'task-4' | grep 'Revert "In the real world, bugs wouldn.t be this hard to find."'; then pass "$test"; else fail "$test"; fi
 
+test="Task 4: the buggy file has been removed"
+git checkout task-4
+if [ -e bug.txt ]; then fail "$test"; else pass "$test"; fi
+git checkout master
 
 #test="Test: vcs-init.sh errors without an argument"
 #if vcs-init.sh; then fail "$test"; else pass "$test"; fi

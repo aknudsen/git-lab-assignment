@@ -60,6 +60,18 @@ To set up Travis CI for your repository:
 * checkout the commit with this message: "object caching on the client side!" and create the branch `task-3` from that commit.
 * push up the new `task-3` branch. This will require setting the upstream branch, but git will help you with the command to do that.
 
+# Task 4:
+
+* on the `task-4` branch, somebody introduced a bug in the commit with the message "In the real world, bugs wouldn't be this hard to find."
+* Use the `git revert` command to reverse the effects of that commit. 
+
+
+# Submitting the assignment
+
+When you are done, add "-- Finished!" to the title of the `README.md` file on the `master` branch and email me the link to the repository at ryan+git2017@sharptop.io, and CC Dr Shaneck on the email. 
+
+Even if you don't finish all the tasks, at least try to finish some of them.
+
 
 # Git Resources:
 
