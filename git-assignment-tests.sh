@@ -29,11 +29,20 @@ fail ()
 
 
 # Test Task 1
-test="Task 1: password has been removed from repository."
-
+test="Task 1: password has been removed from the repository."
 if git log --oneline --all | grep 'password'; then fail "$test"; else pass "$test"; fi
 
-#Init Script Tests
+# Test Task 2
+test="Task 2: the bad file has been removed from the repository"
+git checkout task-2
+if [ -e task2.txt ]; then fail "$test"; else pass "$test"; fi
+git checkout master
+
+test="Task 2: the bad commits have been removed from the repository"
+if git log --oneline --all | grep 'two commits that should not be on task-2'; then fail "$test"; else pass "$test"; fi
+
+
+
 
 #test="Test: vcs-init.sh errors without an argument"
 #if vcs-init.sh; then fail "$test"; else pass "$test"; fi
