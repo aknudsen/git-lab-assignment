@@ -70,8 +70,9 @@ To set up Travis CI for your repository:
 
 When you are done, add "-- Finished!" to the title of the `README.md` file on the `master` branch and email me the link to the repository at ryan+git2017@sharptop.io, and CC Dr Shaneck on the email. 
 
-Even if you don't finish all the tasks, at least try to finish some of them.
+This final push will trigger travis to build the master branch one last time, which will make sure your build status badge shows a passing build. :)
 
+Even if you don't finish all the tasks, at least try to finish some of them.
 
 # Git Resources:
 
