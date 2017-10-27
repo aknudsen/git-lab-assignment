@@ -82,6 +82,13 @@ EOF
 if diff correct_resolution random_conflict; then pass "$test"; else fail "$test"; fi
 rm correct_resolution
 
+# Test Task 6:
+test="Task 6: the correct commit has been cherry picked"
+if git branch -av | grep 'task-6' | grep 'Cherry Pick this commit in Task 6'; then pass "$test"; else fail "$test"; fi
+
+# Test Task 7:
+
+# Test Task 8:
 
 #Example conditions:
 #check for existence of a directory

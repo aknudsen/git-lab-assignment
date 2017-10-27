@@ -78,6 +78,11 @@ To set up Travis CI for your repository:
     * The `random_conflict` file should come out of the merge with all its steps in order.
 * If you get stuck with a merge, `git merge --abort` will clear out all the changes and let you start over.
 
+# Task 6:
+
+* there is a commit on the `master` branch with the commit message `Cherry Pick this commit in Task 6`.
+* Cherry pick this commit onto the `task-6` branch.
+
 # Submitting the assignment
 
 When you are done, add "-- Finished!" to the title of the `README.md` file on the `master` branch and email me the link to the repository at ryan+git2017@sharptop.io, and CC Dr Shaneck on the email. 
