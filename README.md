@@ -67,6 +67,7 @@ To set up Travis CI for your repository:
 
 * on the `task-4` branch, somebody introduced a bug in the commit with the message "In the real world, bugs wouldn't be this hard to find."
 * Use the `git revert` command to reverse the effects of that commit. 
+* Push up the new commit.
 
 # Task 5:
 
@@ -77,11 +78,17 @@ To set up Travis CI for your repository:
 * There will be some conflicts in this merge. This is to help you get comfortable with merge conflicts. Feel free to make it up as you go along, EXCEPT for the `random_conflict` file.
     * The `random_conflict` file should come out of the merge with all its steps in order.
 * If you get stuck with a merge, `git merge --abort` will clear out all the changes and let you start over.
+* Once done, push up the `task-5` branch.
 
 # Task 6:
 
 * there is a commit on the `master` branch with the commit message `Cherry Pick this commit in Task 6`.
-* Cherry pick this commit onto the `task-6` branch.
+* Cherry pick this commit onto the `task-6` branch and push the commit up.
+
+# Task 7:
+
+* on the `task-7` branch, checkout the file `specific_file` from the earlier commit on the same branch with the message: `Add a specific file to be checked out later.`
+* add and commit that version at the head of the `task-7` branch, then push up the changes.
 
 # Submitting the assignment
 
