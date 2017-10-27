@@ -33,7 +33,7 @@ To set up Travis CI for your repository:
     * Configure the alias with the following command: `git config --global alias.lp 'log --oneline --graph --all'`
     * Use `git lp` to get a more useful and powerful log output. :)
 * If you get stuck with a rebase, `git rebase --abort` will let you start over.
-* If you get stuck with a merge, `git reset --hard HEAD` will clear out all the changes and let you start over.
+* If you get stuck with a merge, `git merge --abort` will clear out all the changes and let you start over.
 
 # Tasks
 
@@ -49,6 +49,7 @@ To set up Travis CI for your repository:
     * When you do git log, you hit `/` to search for words. So `/password` should find you the commit containing the password. 
     * You can also use `git log | grep 'password'` to find the commit hash.
     * Note: pay close attention to the output of the rebase command and the output of git status when it hits a stopping point. Most of the time git tells you what you need to do next.
+* If you get stuck with a rebase, `git rebase --abort` will let you start over.
 
 
 # Task 2:
@@ -74,7 +75,8 @@ To set up Travis CI for your repository:
         * make sure you are on the branch that you are merging into (use `git checkout` to get onto it, `git status` to check which branch you are on).
         * the argument to `git merge` is the branch that you will be merging from.
 * There will be some conflicts in this merge. This is to help you get comfortable with merge conflicts. Feel free to make it up as you go along, EXCEPT for the `random_conflict` file.
-* The `random_conflict` file should come out of the merge with all its steps in order.
+    * The `random_conflict` file should come out of the merge with all its steps in order.
+* If you get stuck with a merge, `git merge --abort` will clear out all the changes and let you start over.
 
 # Submitting the assignment
 
