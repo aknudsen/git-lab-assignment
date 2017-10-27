@@ -97,8 +97,6 @@ if diff specific_file correct_specific_file; then pass "$test"; else fail "$test
 rm correct_specific_file
 git checkout master
 
-# Test Task 8:
-
 #Example conditions:
 #check for existence of a directory
 #if [ -d test3/.repo ]; then pass "$test" ; else fail "$test"; fi
