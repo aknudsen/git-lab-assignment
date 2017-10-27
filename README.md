@@ -1,4 +1,4 @@
-# Git Lab Assignment [![Build Status](https://travis-ci.org/slackboxster/git-lab-assignment.svg?branch=master)](https://travis-ci.org/slackboxster/git-lab-assignment)
+# Git Lab Assignment [![Build Status](https://travis-ci.org/aknudsen/git-lab-assignment.svg?branch=master)](https://travis-ci.org/aknudsen/git-lab-assignment)
 
 This assignment will give you a chance to apply your git skills and stretch them a good deal. It is based on the [ChurchConnect Mobile App](https://github.com/churchconnect/mobile-app).
 
