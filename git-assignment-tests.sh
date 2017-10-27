@@ -88,6 +88,7 @@ test="Task 6: the correct commit has been cherry picked"
 if git branch -av | grep 'task-6' | grep 'Cherry Pick this commit in Task 6'; then pass "$test"; else fail "$test"; fi
 
 # Test Task 7:
+test="Task 7: the original version of specific_file has been checked out and added to the task-7 branch."
 git checkout task-7
 cat <<EOF > correct_specific_file
 This version of the file must be checked out.
