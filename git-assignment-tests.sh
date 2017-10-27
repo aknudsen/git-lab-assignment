@@ -54,89 +54,56 @@ git checkout task-4
 if [ -e bug.txt ]; then fail "$test"; else pass "$test"; fi
 git checkout master
 
-#test="Test: vcs-init.sh errors without an argument"
-#if vcs-init.sh; then fail "$test"; else pass "$test"; fi
+# Test Task 5:
+test="Task 5: the task-5-feature branch has been merged into the task-5 branch"
+if git branch --merged task-5 | grep 'task-5-feature'; then pass "$test"; else fail "$test"; fi
 
-#test="Test: vcs-init.sh succeeds with an argument"
-#if vcs-init.sh hello; then pass "$test"; else fail "$test"; fi
+test="Task 5: the random_conflict file still exists"
+git checkout task-5
+if [ -e "random_conflict" ]; then pass "$test"; else fail "$test"; fi
 
-#test="Test: vcs-init.sh fails if the target exists and isn't a directory"
-#echo "hello" > hello.txt
-#if vcs-init.sh hello.txt; then fail "$test"; else pass "$test"; fi
+test="Task 5: the steps in random_conflict are correctly ordered."
+git checkout task-5
+cat <<EOF > correct_resolution
+This is a file that will have some random conflicts. Make sure the block of code below has a normal flow.
 
-#test="Test: vcs-init.sh fails if the target exists and already contains a .repo"
-#mkdir test2
-#mkdir test2/.repo
-#if vcs-init.sh test2 ; then fail "$test" ; else pass "$test"; fi
-#
-#test="Test: vcs-init.sh creates a repository if the target is an existing directory."
-#mkdir test3
-#vcs-init.sh test3
+Code:
+- step 1
+    - step 1a
+    - step 1b
+    - step 1c
+- step 2
+    - step 2a
+    - step 2b
+- step 3
+- step 4
+- step 5
+EOF
+if diff correct_resolution random_conflict; then pass "$test"; else fail "$test"; fi
+rm correct_resolution
+
+
+#Example conditions:
+#check for existence of a directory
 #if [ -d test3/.repo ]; then pass "$test" ; else fail "$test"; fi
 #
-#test="Test: vcs-init.sh creates a working directory and a repository."
-#vcs-init.sh test4
-#if [ -d test4 -a -d test4/.repo ]; then pass "$test"; else fail "$test"; fi
-#
-#test="Test: vcs-init.sh creates a snapshots directory"
-#if [ -d test4/.repo/snapshots ]; then pass "$test"; else fail "$test"; fi
-#
-#test="Test: vcs-init.sh creates a refs directory"
-#if [ -d test4/.repo/refs ]; then pass "$test"; else fail "$test"; fi
-#
-#test="Test: vcs-init.sh creates a tags directory"
-#if [ -d test4/.repo/refs/tags ]; then pass "$test"; else fail "$test"; fi
-
-##Commit Script Tests
-#test="Test: vcs-commit.sh fails if run from a directory that does not contain a repository"
-#if vcs-commit.sh; then fail "$test"; else pass "$test"; fi
-#
-#test="Test: vcs-commit.sh copies normal files into the snapshot directory"
-#cd test4
-#echo "hello" > hello.txt
-#vcs-commit.sh
+#check for existence of a file
 #if [ -e .repo/snapshots/1/hello.txt ]; then pass "$test"; else fail "$test"; fi
 #
-#test="Test: vcs-commit.sh copies hidden files into the snapshot directory"
-#echo "hello" > .hello.txt
-#vcs-commit.sh
-#if [ -e .repo/snapshots/2/.hello.txt ]; then pass "$test"; else fail "$test"; fi
-##
-##test="Test: vcs-commit.sh does not copy .repo into snapshot directory."
-#if [ -e .repo/snapshots/2/.repo ]; then fail "$test"; else pass "$test"; fi
-#
-#test="Test: vcs-commit.sh copies files recursively"
-#mkdir hello
-#echo "hello" > hello/hello.txt
-#vcs-commit.sh
-#if [ -e .repo/snapshots/3/hello/hello.txt ]; then pass "$test"; else fail "$test"; fi
-#
-#test="Test: vcs-commit.sh creates a .commit file in the snapshot directory"
-#if [ -e .repo/snapshots/3/.commit ]; then pass "$test"; else fail "$test"; fi
-#
-#test="Test: vcs-commit.sh includes the current user's username in .commit"
+#grep for text in a file.
 #if grep "`whoami`" .repo/snapshots/3/.commit; then pass "$test"; else fail "$test"; fi
 #
-#test="Test: vcs-commit.sh accepts an optional message argument which it adds to the .commit file."
-#message="this is a test message!"
-#vcs-commit.sh "$message"
-#if grep "$message" .repo/snapshots/4/.commit; then pass "$test"; else fail "$test"; fi
-#
+#grep for text in output of command
 #test="Test: vcs-log.sh shows the commit files from the snapshots folder."
 #if vcs-log.sh | grep "$message"; then pass "$test"; else fail "$test"; fi
-
-#test="Test: vcs-tag.sh fails if two arguments are not specified"
-#if vcs-tag.sh; then fail "$test"; else pass "$test"; fi
-#if vcs-tag.sh 1; then fail "$test"; else pass "$test"; fi
-
-#test="Test: vcs-tag.sh fails if the first argument is not in the snapshots directory"
+#
+#check if script exits with 0 or not.
 #if vcs-tag.sh blaa blaa; then fail "$test"; else pass "$test"; fi
-
-#test="Test: vcs-tag.sh creates a symbolic link with the given name in the .repo/refs/tags directory"
-#vcs-tag.sh 1 blaa;
+#
+#check if file is a symbolic link
 #if [ -L ".repo/refs/tags/blaa" ]; then pass "$test"; else fail "$test"; fi
-
-#test="Test: vcs-tag.sh properly links the tag to the snapshot"
+#
+#check the target of a symbolic link.
 #if ls -al .repo/refs/tags/blaa | grep "> .repo/snapshots/1"; then pass "$test"; else fail "$test"; fi
 
 echo "======================================================================"

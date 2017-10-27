@@ -32,6 +32,8 @@ To set up Travis CI for your repository:
 * The following git alias will make inspecting the logs much easier:
     * Configure the alias with the following command: `git config --global alias.lp 'log --oneline --graph --all'`
     * Use `git lp` to get a more useful and powerful log output. :)
+* If you get stuck with a rebase, `git rebase --abort` will let you start over.
+* If you get stuck with a merge, `git reset --hard HEAD` will clear out all the changes and let you start over.
 
 # Tasks
 
@@ -65,6 +67,14 @@ To set up Travis CI for your repository:
 * on the `task-4` branch, somebody introduced a bug in the commit with the message "In the real world, bugs wouldn't be this hard to find."
 * Use the `git revert` command to reverse the effects of that commit. 
 
+# Task 5:
+
+* merge the `task-5-feature` branch into the `task-5` branch
+    * things to remember:
+        * make sure you are on the branch that you are merging into (use `git checkout` to get onto it, `git status` to check which branch you are on).
+        * the argument to `git merge` is the branch that you will be merging from.
+* There will be some conflicts in this merge. This is to help you get comfortable with merge conflicts. Feel free to make it up as you go along, EXCEPT for the `random_conflict` file.
+* The `random_conflict` file should come out of the merge with all its steps in order.
 
 # Submitting the assignment
 
