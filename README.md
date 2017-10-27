@@ -20,6 +20,7 @@ To set up Travis CI for your repository:
     * Choose the master branch from the first dropdown.
     * Choose Markdown from the second dropdown
     * copy the code sample that results and replace the build status code in this file with the code from your travis account.
+* Note that only the master branch is guaranteed to have the correct configuration for the travis build. Some of the other branches have the old travis configuration from the Church Connect repo I based this project on. So if your tests don't seem right, or you see npm tasks running, change the `version.txt` file on the `master` branch and push up the change to trigger a build on the master branch, which will get your tests right.
 
 # Notes
 
