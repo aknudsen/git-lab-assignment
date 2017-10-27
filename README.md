@@ -1,35 +1,35 @@
 # Git Lab Assignment [![Build Status](https://travis-ci.org/slackboxster/git-lab-assignment.svg?branch=master)](https://travis-ci.org/slackboxster/git-lab-assignment)
 
-This assignment will give you a chance to apply your git skills and stretch them a good deal. It is based on the [ChurchConnect Mobile App](https://github.com/churchconnect/mobile-app), but modified to challenge your skills.
+This assignment will give you a chance to apply your git skills and stretch them a good deal. It is based on the [ChurchConnect Mobile App](https://github.com/churchconnect/mobile-app).
 
-You will need to fork the repostory into your own github account, and clone it to your computer to accomplish the tasks.
+Create a fork of the repository in your own github account, and follow the instructions below.
 
 # Automated Grading
 
-The assignment consists of a series of tasks. After each task, you can run the tests "./git-assignment-tests.sh" to see if you have successfully completed that task. However, the project is also configured to allow automatically running the tests after each push using Travis CI. 
+The assignment consists of a series of tasks. After each task, you can run the test script: "./git-assignment-tests.sh" to see if you have successfully completed that task. However, the project is also configured to allow automatically running the tests with Travis CI after each push of the `master` branch. 
 
 In order to receive a grade for the assignment, you will need to set up a travis-ci build for your fork, and modify the build status badge to point to your travis build.
 
 To set up Travis CI for your repository:
+
 * Sign in to [Travis CI .org](https://travis-ci.org/auth) with your github account.
-* Once Travis has synchronized your GitHub repositories, go to your [Travis Profile Page]() and select the `git-lab-assignment` repository and enable it.
-* The repository already contains a .travis.yml file, so you don't need to worry about that.
-* Once you push up your first commit, you should be able to see travis working.
+* Once Travis has synchronized your GitHub repositories, go to your [Travis Profile Page](https://travis-ci.org/profile/), select the `git-lab-assignment` repository and enable it.
+* The repository already contains a `.travis.yml` file, so you don't need to worry about that.
+* Once you push up your first commit on the `master` branch, you should be able to see travis working.
 * When you look at the page for your git-lab-assignment Travis build, you should see a build status badge that looks like the one at the top of this repository.
     * Click on that build status badge
     * Choose the master branch from the first dropdown.
     * Choose Markdown from the second dropdown
     * copy the code sample that results and replace the build status code in this file with the code from your travis account.
-* Note that only the master branch is guaranteed to have the correct configuration for the travis build. Some of the other branches have the old travis configuration from the Church Connect repo I based this project on. So if your tests don't seem right, or you see npm tasks running, change the `version.txt` file on the `master` branch and push up the change to trigger a build on the master branch, which will get your tests right.
+* Note that only the master branch is guaranteed to have the correct configuration for the travis build. Some of the other branches have the old travis configuration from the Church Connect repo on which I based this assignment. So if your tests don't seem right, or you see npm tasks running, change the `version.txt` file on the `master` branch and push up that change to trigger a build on the master branch, which will in turn run the tests on your repository.
 
 # Notes
 
-* If you encounter conflicts during any merges or rebases or anything else, just make up the resolution as best you can. Since you don't understand the code, it will be hard to accurately resolve the conflicts. But you're being graded on your git work, not the coding, so just make sure the git actions work out.
-* If you clobber any of the following files on your master branch, download them again and commit them back up to reset. (I won't grade you on how many times you add these back. As long as the test script works (and you haven't modified it), I'll be grading based on how many of the tasks you are able to complete).
+* If you encounter conflicts during any merges or rebases or cherry picks, just make up the resolution as best you can. Since you don't understand the code, it will be hard to accurately resolve the conflicts. But you're being graded on your git work, not the coding, so just make sure the git actions work out.
+* Make sure not to change these files on the master branch: (If you do clobber them, just download them from this repository and recommit them to master)
     * The `README.md` file
     * The `.travis.yml` file
     * The `git-assignment-tests.sh` file
-    * Also note that you hopefully won't clobber these files as each task is given its own branch.
 * The following git alias will make inspecting the logs much easier:
     * Configure the alias with the following command: `git config --global alias.lp 'log --oneline --graph --all'`
     * Use `git lp` to get a more useful and powerful log output. :)
@@ -45,13 +45,12 @@ To set up Travis CI for your repository:
     * the rebase approach command example reads as such: `git rebase --onto <branch name>~<first commit number to remove> <branch name>~<first commit to be kept> <branch name>`
     * another way to say it is `git rebase --onto <new source commit> <old source commit> <branch you are rebasing>`
     * another way is: `git rebase --onto <commit hash before the password commit> <commit hash after the password commit> <branch you are removing the password from>`
-* Once you are done removing the commit, use the force to push your changes (git push -f origin task-1)
+* Once you are done removing the commit, use the force to push your changes: `git push -f origin task-1`
 * Notes and hints:
     * When you do git log, you hit `/` to search for words. So `/password` should find you the commit containing the password. 
     * You can also use `git log | grep 'password'` to find the commit hash.
     * Note: pay close attention to the output of the rebase command and the output of git status when it hits a stopping point. Most of the time git tells you what you need to do next.
 * If you get stuck with a rebase, `git rebase --abort` will let you start over.
-
 
 # Task 2:
 
@@ -66,7 +65,7 @@ To set up Travis CI for your repository:
 
 # Task 4:
 
-* on the `task-4` branch, somebody introduced a bug in the commit with the message "In the real world, bugs wouldn't be this hard to find."
+* on the `task-4` branch, somebody introduced a bug in the commit with the message "In the real world, bugs wouldn't be this hard to find." (I know, it really should say "this easy"... but I must have been tired when I wrote that ;) ).
 * Use the `git revert` command to reverse the effects of that commit. 
 * Push up the new commit.
 
