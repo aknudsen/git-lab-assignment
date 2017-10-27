@@ -101,5 +101,30 @@ Even if you don't finish all the tasks, at least try to finish some of them.
 
 # Git Resources:
 
-* How to remove a commit: https://www.clock.co.uk/insight/deleting-a-git-commit
-* In depth on rebasing: https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+* Potentially Useful Commands:
+    * `git annotate <file>`: shows who committed each line of the file and when. Useful for blaming someone else for creating a bug.
+    * `git add -i`: Interactive adding mode -- enables selectively adding changes to the repository.
+    * `git stash`: the stash is a very useful thing for keeping changes while you quickly do something else with the repository.
+
+* Reference Materials:
+    * [The Git Book](https://git-scm.com/book/en/v2)
+    * [An in depth git cheat sheet](http://ndpsoftware.com/git-cheatsheet.html)
+    * [StackOverflow's frequently asked git questions](https://stackoverflow.com/questions/tagged/git?sort=frequent&pageSize=50)
+
+* Videos:
+    * [Linus Torvalds talking to Google](https://www.youtube.com/watch?v=4XpnKHJAok8)
+    * [Scott Chacon (author of the git book) explains git in a very accessible way](https://www.youtube.com/watch?v=ZDR433b0HJY)
+
+* Tutorials:
+    * [Github's online emulator and tutorial](https://try.github.io/levels/1/challenges/1)
+    * [Atlassian's Git Tutorials](https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud)
+
+
+* Other interesting resources:
+    * [The Git Parable explains how git works in normal computer terms](http://tom.preston-werner.com/2009/05/19/the-git-parable.html)
+    * [My "Build your own VCS" challenge, based loosely on the Git Parable](http://ryanheathcote.com/git/build-your-own-vcs)
+    * [Some interesting visual explanations of git](http://marklodato.github.io/visual-git-guide/index-en.html)
+    * [First Time Setup Instructions](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+    * [How to remove a commit](https://www.clock.co.uk/insight/deleting-a-git-commit)
+    * [In depth on rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
+    * [How to create a merge conflict](https://jonathanmh.com/how-to-create-a-git-merge-conflict/)
