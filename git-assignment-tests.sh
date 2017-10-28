@@ -27,16 +27,16 @@ fail ()
     ((fails++))
 }
 
-+# Checkout all the branches so that they are local in the clone
- +git checkout task-1
- +git checkout task-2
- +git checkout task-3
- +git checkout task-4
- +git checkout task-5
- +git checkout task-5-feature
- +git checkout task-6
- +git checkout task-7
- +git checkout master
+# Checkout all the branches so that they are local in the clone
+git checkout task-1
+git checkout task-2
+git checkout task-3
+git checkout task-4
+git checkout task-5
+git checkout task-5-feature
+git checkout task-6
+git checkout task-7
+git checkout master
 
 # Test Task 1
 test="Task 1: password has been removed from the repository."
@@ -76,7 +76,6 @@ test="Task 5: the steps in random_conflict are correctly ordered."
 git checkout task-5
 cat <<EOF > correct_resolution
 This is a file that will have some random conflicts. Make sure the block of code below has a normal flow.
-
 Code:
 - step 1
     - step 1a
