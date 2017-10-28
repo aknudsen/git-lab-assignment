@@ -41,6 +41,8 @@
             extra-fields.bind="postGroup.rssMetadata"
             data.bind="postGroup"
             filtered-posts.bind="filteredPosts"
+            class="accordion-target"
+            style="display: none;"
             if.bind="postGroup.postGroups.length == 0"
         >
         </filter-content>
