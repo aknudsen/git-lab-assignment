@@ -66,7 +66,6 @@ test="Task 5: the steps in random_conflict are correctly ordered."
 git checkout task-5
 cat <<EOF > correct_resolution
 This is a file that will have some random conflicts. Make sure the block of code below has a normal flow.
-
 Code:
 - step 1
     - step 1a
