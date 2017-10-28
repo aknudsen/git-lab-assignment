@@ -27,6 +27,16 @@ fail ()
     ((fails++))
 }
 
++# Checkout all the branches so that they are local in the clone
+ +git checkout task-1
+ +git checkout task-2
+ +git checkout task-3
+ +git checkout task-4
+ +git checkout task-5
+ +git checkout task-5-feature
+ +git checkout task-6
+ +git checkout task-7
+ +git checkout master
 
 # Test Task 1
 test="Task 1: password has been removed from the repository."
