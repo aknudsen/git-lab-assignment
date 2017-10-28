@@ -43,6 +43,7 @@ export class Home {
                 this.configurationHolder.set('prayerTimeImageURL', res.prayerTimeImageURL)
                 this.configurationHolder.set('eventsImageURL', res.eventsImageURL)
 
+                this.eventAggregator.subscribe('feed.cache.updated',() => this.feed = this.feedService.findOne())
             }
         )
     }

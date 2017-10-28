@@ -33,5 +33,19 @@ export class EventsList {
         this.events.promise.then((events) => this.filteredEvents = events)
 
         this.eventsImageURL = configurationHolder.get('eventsImageURL')
+        this.eventService = eventService
+        this.router = router
+        this.navigationService = navigationService
+        this.eventAggregator = EventAggregator
+
+        this.eventsImageURL = configurationHolder.get('eventsImageURL')
+
+        this.eventAggregator.subscribe('events.cache.updated', () => this.loadEvents())
+        this.loadEvents()
+    }
+
+    loadEvents() {
+        this.events = this.eventService.list()
+        this.events.promise.then((events) => this.filteredEvents = events)
     }
 }

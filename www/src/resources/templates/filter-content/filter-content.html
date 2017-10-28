@@ -13,7 +13,7 @@
                     <div class="item-content">
                         <div class="item-inner">
                             <div class="item-title label">
-                                Filter
+                                Search
                             </div>
                             <div class="item-input">
                                 <input id="filter-box"
@@ -21,7 +21,7 @@
                                     type="text"
                                     value.bind="filterBox & debounce:500"
                                     keyUp.delegate="filterBoxChange($event.target.value)"
-                                    placeholder="Type here to filter this list" />
+                                    placeholder="Start here" />
                             </div>
                         </div>
                     </div>

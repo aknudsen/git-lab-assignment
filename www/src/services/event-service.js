@@ -17,6 +17,7 @@ export class EventService extends ResourceService {
     constructor(api, objectCache) {
         super(api, Event, objectCache)
         this.objectCache = objectCache
+        this.eventAggregator = EventAggregator
 
         setInterval(() => this.refreshCache(), 60000)
     }
@@ -48,6 +49,7 @@ export class EventService extends ResourceService {
         if (Date.now() - this.lastUpdated > 600000) {
             console.log("Refreshing Events List")
         if (Date.now() - this.lastUpdated > 600000) {
+            console.log("Refreshing Events List")
             this.cacheEventsList(super.list())
         }
     }
